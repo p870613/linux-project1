@@ -4,7 +4,8 @@
 
 int main()
 {   
-    int test[10000000];
-    syscall(548, test);
+    char t[1000] ;
+    syscall(548, t);
+
     return 0;
 }

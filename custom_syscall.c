@@ -49,13 +49,12 @@ static unsigned long convert_to_phy_add(struct mm_struct *mm, unsigned long vir_
         return phy_add;
 
 }
-void vm_table(struct task_struct *task,char* result)
-{
+
+void vm_table(struct task_struct *task,char* result) {
         struct vm_area_struct *cur = task->mm->mmap;
 		int count_null_vm = 0, count_all_vm = 0;
         
-		while(cur != NULL)
-        {	
+		while(cur != NULL) {	
 			count_null_vm++;
 
 			unsigned long start = cur->vm_start;
@@ -63,7 +62,7 @@ void vm_table(struct task_struct *task,char* result)
 			unsigned long phy_start = convert_to_phy_add(task->mm, start);
 			unsigned long phy_end = convert_to_phy_add(task->mm, end);
 
-			if (phy_start == 0) {
+			if (!phy_start) {
 				// current vm_area is not mapped to physical memory
 				count_null_vm ++;
 			}
@@ -74,10 +73,9 @@ void vm_table(struct task_struct *task,char* result)
 			// traverse all the vm_area
 			cur = cur -> vm_next;
 
-			printk("total count %d",count_all_vm);
-			printk("null count %d",count_null_vm);
 		}
-
+		printk("total count %d",count_all_vm);
+		printk("null count %d",count_null_vm);
 }
 
 asmlinkage long sys_hello(char* result)
@@ -86,8 +84,6 @@ asmlinkage long sys_hello(char* result)
         struct task_struct *task = get_current();
         //printk("%d", task->pid);
         pid_struct = find_get_pid(task->pid);
-
-
         vm_table(task,result);
         
 		return 0;
