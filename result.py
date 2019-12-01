@@ -1,4 +1,4 @@
-"""You need to change the path of file"""
+"""You need to change the path of file, and notice ln29"""
 f1 = open(r'C:/Users/ducky/Desktop/Test/result/result_1.txt')
 f2 = open(r'C:/Users/ducky/Desktop/Test/result/result_2.txt')
 f3 = open(r'C:/Users/ducky/Desktop/Test/result/result_3.txt')
