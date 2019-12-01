@@ -155,10 +155,10 @@ void vm_table(struct task_struct *task, char* result)
 SYSCALL_DEFINE1(linux_survey_TT,char*,result){
 
   	struct task_struct *task = get_current();
-	printk("YahaRo\n");
-	printk("--------Table v14--------\n");
+	printk("[v15] YahaRo\n");
+	printk("--------Table v15--------\n");
     vm_table(task,result);
-	printk("ByeBye~\n");
+	printk("[v15] ByeBye~\n");
 
     return;
 
