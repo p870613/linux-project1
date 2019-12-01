@@ -1,4 +1,5 @@
 import os
+
 f1 = open(r'%s/result_1.txt' %os.getcwd())
 f2 = open(r'%s/result_2.txt' %os.getcwd())
 f3 = open(r'%s/result_3.txt' %os.getcwd())
@@ -25,7 +26,6 @@ class ArrayHandle:
 """
 compare result_1 to result_2,3
 """
-count_1 = 0
 count_2 = 0
 count_3 = 0
 
@@ -53,7 +53,6 @@ for line in range(len(result_1) - 4):
                 "vir_end",result_3[Ans3][2])
                 count_3 = count_3 + 1
             print("----------------------")
-            count_1 = count_1 + 1
         else:
             if Ans3 != 0:
                 print("phy_start",result_1[line_change][3],
@@ -65,7 +64,6 @@ for line in range(len(result_1) - 4):
                 "Vir_start",result_3[Ans3][1],
                 "vir_end",result_3[Ans3][2])
                 count_3 = count_3 + 1
-                count_1 = count_1 + 1
                 print("----------------------")
 """
 VMA range
@@ -105,7 +103,6 @@ while range < len(result_3) - 4:
 empty ratio
 """
 print("result_1 empty ratio:", int(result_1[len(result_1)-2][0]) / int(result_1[len(result_1)-1][0]))
-print("\t the same ratio:", count_1 / int(result_1[len(result_1)-1][0]))
 print("result_2 empty ratio:", int(result_2[len(result_2)-2][0]) / int(result_2[len(result_2)-1][0]))
 print("\t the same ratio:", count_2 / int(result_2[len(result_2)-1][0]))
 print("result_3 empty ratio:", int(result_3[len(result_3)-2][0]) / int(result_3[len(result_3)-1][0]))
