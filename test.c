@@ -36,8 +36,7 @@ int main()
 	{   //executed by the child process
 		
 
-		linux_survey_TT(result_2);     //location 1
-        //location 2
+		linux_survey_TT(result_2);     //location 2
 
 		result_1[0]=123;               //This should trigger copy-on-right, if the above system call does not trigger the COW.
 
