@@ -1,7 +1,7 @@
-"""You need to change the path of file"""
-f1 = open(r'C:/Users/ducky/Desktop/Test/result/result_1.txt')
-f2 = open(r'C:/Users/ducky/Desktop/Test/result/result_2.txt')
-f3 = open(r'C:/Users/ducky/Desktop/Test/result/result_3.txt')
+import os
+f1 = open(r'%s/result_1.txt' %os.getcwd())
+f2 = open(r'%s/result_2.txt' %os.getcwd())
+f3 = open(r'%s/result_3.txt' %os.getcwd())
 result_1 = []
 result_2 = []
 result_3 = []
